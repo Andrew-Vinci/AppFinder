@@ -6,6 +6,7 @@ function createAppIcons(numberOfIcons) {
         const appIcon = document.createElement('div');
 
         appIcon.textContent = "Item" + counter
+        appIcon.classList.add('item')
         counter++
 
         grid.appendChild(appIcon);
@@ -14,6 +15,5 @@ function createAppIcons(numberOfIcons) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Your code to manipulate the DOM goes here
     createAppIcons(35);
-  });
+});
