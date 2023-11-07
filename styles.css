@@ -2,3 +2,15 @@
 h1{
     color: Blue
 }
+
+
+.container {
+    display: grid;
+    gap: 50px 75px;
+    grid-template: 50px 50px 50px 50px 50px /
+    50px 50px 50px 50px 50px 50px 50px;
+}
+
+.container > div {
+    border: 1px solid black;
+  }
