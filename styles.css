@@ -3,6 +3,11 @@ h1{
     color: Blue
 }
 
+/*
+.background{
+    border: 1px solid black;
+}
+*/
 
 .container {
     display: grid;

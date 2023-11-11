@@ -14,6 +14,5 @@ function createAppIcons(numberOfIcons) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Your code to manipulate the DOM goes here
     createAppIcons(35);
   });
