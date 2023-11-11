@@ -1,3 +1,7 @@
+var winningApp = 0
+var startTime = 0
+var endTime = 0
+var numOfMissclicks = 0
 
 function createAppIcons(numberOfIcons) {
     const grid = document.querySelector('.container');
@@ -26,7 +30,7 @@ function createGrid() {
 
 // randomizes app positions
 // based on https://stackoverflow.com/questions/52241641/shuffling-multidimensional-array-in-js
-function randomizeBoard(grid) {
+function randomizeGrid(grid) {
     for (var k = 0; k < grid.length; k++) {
         var i = grid[k].length;
         if (i == 0)
@@ -51,8 +55,26 @@ function chooseWinningApp() {
 }
 
 // sees if the user clicked the app
-function checkClickedApp() {
+function checkClickedApp(icon) {
+    if (icon == winningApp) {
+        endTime = Date.now() - startTime;
+        return endTime;
+    }
+    else {
+        numOfMissclicks++;
+    }
+}
 
+
+function gameLoop(grid, winningApp) {
+
+}
+
+function startGame() {
+    grid = randomizeGrid(createGrid());
+    winningApp = chooseWinningApp();
+    startTime = Date.now();
+    numOfMissclicks = 0
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
