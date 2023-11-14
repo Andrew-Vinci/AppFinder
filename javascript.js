@@ -3,16 +3,19 @@ var startTime = 0
 var endTime = 0
 var numOfMissclicks = 0
 
+var buttonArray = []
+
 function createAppIcons(numberOfIcons) {
     const grid = document.querySelector('.container');
     counter = 0;
     for(let i = 0; i < numberOfIcons; i++){
-        const appIcon = document.createElement('div');
+        const appIcon = document.createElement('button');
 
         appIcon.textContent = "Item" + counter
-        appIcon.classList.add('item')
+        appIcon.classList.add('item' + counter)
         counter++
 
+        buttonArray.push(appIcon);
         grid.appendChild(appIcon);
 
     }
