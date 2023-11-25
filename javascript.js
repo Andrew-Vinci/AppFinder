@@ -4,6 +4,9 @@ var endTime = 0
 var numOfMissclicks = 0
 
 var buttonArray = []
+var buttonArrayOG = []
+
+var imageUrls = ['images/appStoreIcon.png'];
 
 function createAppIcons(numberOfIcons) {
     const grid = document.querySelector('.container')
@@ -12,25 +15,34 @@ function createAppIcons(numberOfIcons) {
         const appIcon = document.createElement('button');
 
         appIcon.textContent = "Item" + counter
+        appIcon.id = 'button-' + i;
         appIcon.classList.add('item')
         counter++
 
+        if (imageUrls[i]) {
+            appIcon.style.backgroundImage = `url(${imageUrls[i]})`;
+        }
+
         buttonArray.push(appIcon);
+        buttonArrayOG.push(appIcon);
         grid.appendChild(appIcon);
 
     }
 }
 
-function createGrid() {
-    return [
-        [0, 1, 2, 3, 4, 5, 6],
-        [7, 8, 9, 10, 11, 12, 13],
-        [14, 15, 16, 17, 18, 19, 20],
-        [21, 22, 23, 24, 25, 26, 27],
-        [28, 29, 30, 31, 32, 33, 34]
-    ]
+// Rewrote randomiz grid to work with a single dimensional array
+function randomizeGrid(grid) {
+    for (let i = grid.length - 1; i > 0; i--) {
+        // Random index
+        const j = Math.floor(Math.random() * (i + 1));
+
+        // Swap elements with current index and random index
+        [grid[i], grid[j]] = [grid[j], grid[i]];
+    }
+    return grid;
 }
 
+/*
 // randomizes app positions
 // based on https://stackoverflow.com/questions/52241641/shuffling-multidimensional-array-in-js
 function randomizeGrid(grid) {
@@ -50,6 +62,50 @@ function randomizeGrid(grid) {
     }
     return grid
 }
+*/
+
+function clearGrid() {
+    const grid = document.querySelector('.container');
+    grid.innerHTML = '';
+}
+
+function clickAndShuffle() {
+    // For each button inside the array
+    buttonArray.forEach(button => {
+
+        // Get the click listener
+        button.addEventListener('click', function() {
+
+            // Shuffle the buttonArray w/ all buttons
+            randomizeGrid(buttonArray);
+
+            // Clear the existing grid being displayed to user
+            clearGrid();
+
+            // Re-append/insert the buttons into the container html
+            buttonArray.forEach(shuffledButton => {
+                document.querySelector('.container').appendChild(shuffledButton);
+            });
+
+            // Console log the button ID
+            console.log('Button ID:', this.id);
+        });
+    });
+}
+
+
+/*
+function createGrid() {
+    return [
+        [0, 1, 2, 3, 4, 5, 6],
+        [7, 8, 9, 10, 11, 12, 13],
+        [14, 15, 16, 17, 18, 19, 20],
+        [21, 22, 23, 24, 25, 26, 27],
+        [28, 29, 30, 31, 32, 33, 34]
+    ]
+}
+*/
+
 
 // randomly determines which app wins in this current pass
 // should we have a list of past winning apps so it's a different app every time?
@@ -93,4 +149,5 @@ function startGame() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
+    clickAndShuffle();
 });

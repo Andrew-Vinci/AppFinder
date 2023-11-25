@@ -36,6 +36,8 @@ h1{
     align-items: center;
     aspect-ratio: 1 / 1;
     border-radius: 12px;
+    background-size: cover; /* Cover the entire area of the button */
+    background-position: center; /* Center the image */
 }
 
 .button:hover {
