@@ -2,6 +2,9 @@ var winningApp = 0
 var startTime = 0
 var endTime = 0
 var numOfMissclicks = 0
+var runThroughNum = 0
+var times = []
+var correctIcons = []
 
 var buttonArray = []
 var buttonArrayOG = []
@@ -15,7 +18,7 @@ function createAppIcons(numberOfIcons) {
         const appIcon = document.createElement('button');
 
         appIcon.textContent = "Item" + counter
-        appIcon.id = 'button-' + i;
+        appIcon.id = i; // I changed this to just be an number for simpler comparisons
         appIcon.classList.add('item')
         counter++
 
@@ -74,7 +77,9 @@ function clickAndShuffle() {
     buttonArray.forEach(button => {
 
         // Get the click listener
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
+            // check if app is winning app
+            checkClickedApp(this.id);
 
             // Shuffle the buttonArray w/ all buttons
             randomizeGrid(buttonArray);
@@ -114,17 +119,21 @@ function chooseWinningApp() {
 }
 
 // sees if the user clicked the app
-function checkClickedApp() {
-    icon = getElementByClassName("item")
-    console.log(icon)
+function checkClickedApp(icon) {
+    //icon = getElementByClassName("item")
+    //console.log(icon)
+
     // do something to convert icon into a number
     if (icon == winningApp) {
         endTime = Date.now() - startTime;
+        console.log('time:', endTime);
         times.push(endTime)
         correctIcons.push(winningApp)
+        console.log('You are correct, icon you picked is', icon);
         return endTime
     }
     else {
+        console.log('You are wrong, icon you picked is', icon);
         numOfMissclicks++
     }
 }
@@ -139,6 +148,7 @@ function startGame() {
         runThroughNum++
         grid = randomizeGrid(createGrid())
         winningApp = chooseWinningApp()
+        console.log("Winning app:", winningApp)
         startTime = Date.now()
         numOfMissclicks = 0
     }
@@ -149,5 +159,6 @@ function startGame() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
+    startGame()
     clickAndShuffle();
 });
