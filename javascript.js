@@ -133,7 +133,7 @@ function chooseWinningApp() {
 // sees if the user clicked the app
 function checkClickedApp(icon) {
     //icon = getElementByClassName("item")
-    //console.log(icon)
+    console.log(icon)
 
     // do something to convert icon into a number
     if (icon == winningApp) {
@@ -142,6 +142,8 @@ function checkClickedApp(icon) {
         times.push(endTime)
         correctIcons.push(winningApp)
         console.log('You are correct, icon you picked is', icon);
+        winningApp = chooseWinningApp()
+        console.log('New winning number is ', winningApp);
         return endTime
     }
     else {
@@ -171,6 +173,8 @@ function startGame() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
-    startGame()
+    winningApp = chooseWinningApp();
+    console.log("Winning app:", winningApp);
+    startTime = Date.now()
     clickAndShuffle();
 });
