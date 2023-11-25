@@ -12,7 +12,7 @@ function createAppIcons(numberOfIcons) {
         const appIcon = document.createElement('button');
 
         appIcon.textContent = "Item" + counter
-        appIcon.classList.add('item' + counter)
+        appIcon.classList.add('item')
         counter++
 
         buttonArray.push(appIcon);
@@ -58,7 +58,10 @@ function chooseWinningApp() {
 }
 
 // sees if the user clicked the app
-function checkClickedApp(icon) {
+function checkClickedApp() {
+    icon = getElementByClassName("item")
+    console.log(icon)
+    // do something to convert icon into a number
     if (icon == winningApp) {
         endTime = Date.now() - startTime;
         times.push(endTime)
