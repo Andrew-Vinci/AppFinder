@@ -9,7 +9,19 @@ var correctIcons = []
 var buttonArray = []
 var buttonArrayOG = []
 
-var imageUrls = ['images/appStoreIcon.png'];
+var imageUrls = ['images/Icon0_ChatGPT.png', 'images/Icon1_Youtube.png', 'images/Icon2_WhatsApp.png',
+    'images/Icon3_Facebook.png', 'images/Icon4_CashApp.png', 'images/Icon5_Venmo.png',
+    'images/Icon6_Snapchat.png', 'images/Icon7_Spotify.png', 'images/Icon8_Uber.png',
+    'images/Icon9_.png', 'images/Icon10_Doordash.png', 'images/Icon11_Temu.png',
+    'images/Icon12_Capcut.png', 'images/Icon13_Telegram.png', 'images/Icon14_Shein.png',
+    'images/Icon15_McDonalds.png', 'images/Icon16_Threads.png', 'images/Icon17_Walmart.png',
+    'images/Icon18_PrimeVideo.png', 'images/Icon19_Netflix.png', 'images/Icon20_Reddit.png',
+    'images/Icon21_Life360.png', 'images/Icon22_Ticketmaster.png', 'images/Icon23_Pinterest.png',
+    'images/Icon24_Roblox.png', 'images/Icon25_Shop.png', 'images/Icon26_Zoom.png',
+    'images/Icon27_Discord.png', 'images/Icon28_HBOMax.png', 'images/Icon29_Tinder.png',
+    'images/Icon30_Hulu.png', 'images/Icon31_Audible.png', 'images/Icon32_LinkedIn.png',
+    'images/Icon33_Paramount.png', 'images/Icon34_0_Finder.png'
+];
 
 function createAppIcons(numberOfIcons) {
     const grid = document.querySelector('.container')
@@ -17,7 +29,7 @@ function createAppIcons(numberOfIcons) {
     for(let i = 0; i < numberOfIcons; i++){
         const appIcon = document.createElement('button');
 
-        appIcon.textContent = "Item" + counter
+        //appIcon.textContent = "Item" + counter
         appIcon.id = i; // I changed this to just be an number for simpler comparisons
         appIcon.classList.add('item')
         counter++
