@@ -144,7 +144,7 @@ function startGame() {
 
 // add a new html page to make user download file afterwards
 function saveToSheet() {
-    allData = times.toString() "\n" + correctIcons.toString() + "\n" + wrongIcons.toString() + "\n \n";
+    allData = times.toString() + "\n" + correctIcons.toString() + "\n" + wrongIcons.toString() + "\n \n";
     const link = document.createElement("downloadLink");
     //const content = document.querySelector("textarea").value;
     const file = new Blob([allData], { type: 'text/plain' });
