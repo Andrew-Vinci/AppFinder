@@ -5,6 +5,8 @@ var numOfMissclicks = 0
 var runThroughNum = 0
 var times = []
 var correctIcons = []
+var wrongIcons = []
+var allIcons = []
 
 var buttonArray = []
 var buttonArrayOG = []
@@ -111,10 +113,12 @@ function checkClickedApp(icon) {
         console.log('You are correct, icon you picked is', icon);
         winningApp = chooseWinningApp()
         console.log('New winning number is ', winningApp);
+        saveToSheet()
         return endTime
     }
     else {
         console.log('You are wrong, icon you picked is', icon);
+        correctIcons.push(icon)
         numOfMissclicks++
     }
 }
@@ -136,6 +140,18 @@ function startGame() {
     else {
         // add data to spreadsheet
     }
+}
+
+// add a new html page to make user download file afterwards
+function saveToSheet() {
+    allData = times.toString() "\n" + correctIcons.toString() + "\n" + wrongIcons.toString() + "\n \n";
+    const link = document.createElement("downloadLink");
+    //const content = document.querySelector("textarea").value;
+    const file = new Blob([allData], { type: 'text/plain' });
+    link.href = URL.createObjectURL(file);
+    link.download = "data.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
