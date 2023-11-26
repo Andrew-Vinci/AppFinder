@@ -57,27 +57,6 @@ function randomizeGrid(grid) {
     return grid;
 }
 
-/*
-// randomizes app positions
-// based on https://stackoverflow.com/questions/52241641/shuffling-multidimensional-array-in-js
-function randomizeGrid(grid) {
-    for (var k = 0; k < grid.length; k++) {
-        var i = grid[k].length
-        if (i == 0)
-            return false
-        else {
-            while (--i) {
-                var j = Math.floor(Math.random() * (i + 1))
-                var tempi = grid[k][i]
-                var tempj = grid[k][j]
-                grid[k][i] = tempj
-                grid[k][j] = tempi
-            }
-        }
-    }
-    return grid
-}
-*/
 
 function clearGrid() {
     const grid = document.querySelector('.container');
@@ -110,18 +89,6 @@ function clickAndShuffle() {
     });
 }
 
-
-/*
-function createGrid() {
-    return [
-        [0, 1, 2, 3, 4, 5, 6],
-        [7, 8, 9, 10, 11, 12, 13],
-        [14, 15, 16, 17, 18, 19, 20],
-        [21, 22, 23, 24, 25, 26, 27],
-        [28, 29, 30, 31, 32, 33, 34]
-    ]
-}
-*/
 
 
 // randomly determines which app wins in this current pass
@@ -178,3 +145,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
     startTime = Date.now()
     clickAndShuffle();
 });
+
+
+
+/*
+function createGrid() {
+    return [
+        [0, 1, 2, 3, 4, 5, 6],
+        [7, 8, 9, 10, 11, 12, 13],
+        [14, 15, 16, 17, 18, 19, 20],
+        [21, 22, 23, 24, 25, 26, 27],
+        [28, 29, 30, 31, 32, 33, 34]
+    ]
+}
+*/
+
+/*
+// randomizes app positions
+// based on https://stackoverflow.com/questions/52241641/shuffling-multidimensional-array-in-js
+function randomizeGrid(grid) {
+    for (var k = 0; k < grid.length; k++) {
+        var i = grid[k].length
+        if (i == 0)
+            return false
+        else {
+            while (--i) {
+                var j = Math.floor(Math.random() * (i + 1))
+                var tempi = grid[k][i]
+                var tempj = grid[k][j]
+                grid[k][i] = tempj
+                grid[k][j] = tempi
+            }
+        }
+    }
+    return grid
+}
+*/
