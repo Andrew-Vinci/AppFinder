@@ -34,6 +34,17 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.pageContainer button{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    border: none;
+    background-size: cover; /* Cover the entire area of the button */
+    background-position: center; /* Center the image */
+}
+
 .pageContainer a{
     font-size: 2em;
     display: block; /* Makes the link a block element */
