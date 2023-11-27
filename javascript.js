@@ -308,6 +308,22 @@ function stopTimer() {
     console.log('Timer stopped. Total elapsed time:', totalTime, 'seconds');
 }
 
+function displayColor() {
+    cycle = getColorCycle()
+    console.log(cycle)
+    if (cycle == 0) {
+        document.getElementById("demo").style.backgroundImage = `url(images/Icon34_0_Finder.png)`;
+    }
+    if (cycle == 1) {
+        document.getElementById("demo").style.backgroundImage = `url(images/Icon34_1_Finder.png)`;
+    }
+    if (cycle == 2) {
+        document.getElementById("demo").style.backgroundImage = `url(images/Icon34_2_Finder.png)`;
+    }
+    if (cycle == 3) {
+        document.getElementById("demo").style.backgroundImage = `url(images/Icon34_3_Finder.png)`;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
