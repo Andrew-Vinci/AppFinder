@@ -111,7 +111,6 @@ function createAppIcons(numberOfIcons) {
 
 
         if(getColorCycle() == 0){
-            showApp.style.backgroundImage = `url(images/Icon34_1_Finder.png)`;
             if (imageUrlsWhite[i]) {
                 appIcon.style.backgroundImage = `url(${imageUrlsWhite[i]})`;
             }
@@ -260,25 +259,21 @@ function clickAndShuffle() {
             buttonArray.forEach((shuffledButton, newIndex) => {
                 if(getColorCycle() == 0){
                     if(shuffledButton.id == 9000){
-                        showApp.style.backgroundImage = `url(images/Icon34_0_Finder.png)`;
                         shuffledButton.style.backgroundImage = `url(images/Icon34_0_Finder.png)`;
                     }
                 }
                 if(getColorCycle() == 1){
                     if(shuffledButton.id == 9000){
-                        showApp.style.backgroundImage = `url(images/Icon34_1_Finder.png)`;
                         shuffledButton.style.backgroundImage = `url(images/Icon34_1_Finder.png)`;
                     }
                 }
                 if(getColorCycle() == 2){
                     if(shuffledButton.id == 9000){
-                        showApp.style.backgroundImage = `url(images/Icon34_2_Finder.png)`;
                         shuffledButton.style.backgroundImage = `url(images/Icon34_2_Finder.png)`;
                     }
                 }
                 if(getColorCycle() == 3){
                     if(shuffledButton.id == 9000){
-                        showApp.style.backgroundImage = `url(images/Icon34_3_Finder.png)`;
                         shuffledButton.style.backgroundImage = `url(images/Icon34_3_Finder.png)`;
                     }
                 }
