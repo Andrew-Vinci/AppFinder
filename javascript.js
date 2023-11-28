@@ -15,6 +15,7 @@ let startTimezz = 0;
 let timerInterval; // Global variable for the interval
 let incorrectClicks = 0;
 let colorCycle;
+let counter;
 const showApp = document.querySelector('.showApp');
 
 // Check if a value already exists in local storage
@@ -103,9 +104,7 @@ function createAppIcons(numberOfIcons) {
     for(let i = 0; i < numberOfIcons; i++){
         const appIcon = document.createElement('button');
 
-        //appIcon.textContent = "Item" + counter
         appIcon.id = i; // I changed this to just be an number for simpler comparisons
-        //appIcon.textContent = i;
         appIcon.classList.add('item')
         counter++
 
@@ -199,8 +198,6 @@ function clickAndShuffle() {
                 let totalTime = Math.floor((Date.now() - startTimezz) / 1000);
                 console.log('Timer stopped. Total elapsed time:', totalTime, 'seconds');
 
-                //setColorCycle(colorCycle);
-
                 console.log("WINNER");
                 console.log("Incorrect Clicks: " + incorrectClicks);
 
@@ -246,8 +243,6 @@ function clickAndShuffle() {
                 incorrectClicks++;
             }
 
-            // check if app is winning app
-            //checkClickedApp(this.id);
 
             // Shuffle the buttonArray w/ all buttons
             randomizeGrid(buttonArray);
@@ -302,8 +297,6 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(timerInterval); // Stop the interval timer
-
-    // Optional: Log the total elapsed time when the timer stops
     let totalTime = Math.floor((Date.now() - startTimezz) / 1000);
     console.log('Timer stopped. Total elapsed time:', totalTime, 'seconds');
 }
@@ -328,10 +321,6 @@ function displayColor() {
 document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
     startTimer();
-    //console.log(startTimezz);
-    //winningApp = chooseWinningApp();
-    //console.log("Winning app:", winningApp);
-    //startTime = Date.now()
     clickAndShuffle();
 });
 
