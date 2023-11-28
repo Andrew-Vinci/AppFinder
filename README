@@ -1,0 +1,3 @@
+This project is meant to act as part of an experiment to determine how icon color affects a user's ability to quickly and easily identify it from amongst other apps.
+The webpage cycles through the same app in four different colors: white, red, green, and blue.
+Incorrect attempts and total time are recorded in a text file at the end of each round.
