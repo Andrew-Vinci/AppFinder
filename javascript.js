@@ -105,7 +105,7 @@ function createAppIcons(numberOfIcons) {
 
         //appIcon.textContent = "Item" + counter
         appIcon.id = i; // I changed this to just be an number for simpler comparisons
-        appIcon.textContent = i;
+        //appIcon.textContent = i;
         appIcon.classList.add('item')
         counter++
 
@@ -116,7 +116,7 @@ function createAppIcons(numberOfIcons) {
             }
             if(imageUrlsWhite[i] == 'images/Icon34_0_Finder.png'){
                 appIcon.id = 9000;
-                appIcon.textContent = 9000;
+                //appIcon.textContent = 9000;
             }
         }
 
@@ -126,7 +126,7 @@ function createAppIcons(numberOfIcons) {
             }
             if(imageUrlsRed[i] == 'images/Icon34_1_Finder.png'){
                 appIcon.id = 9000;
-                appIcon.textContent = 9000;
+                //appIcon.textContent = 9000;
             }
         }
 
@@ -136,7 +136,7 @@ function createAppIcons(numberOfIcons) {
             }
             if(imageUrlsGreen[i] == 'images/Icon34_2_Finder.png'){
                 appIcon.id = 9000;
-                appIcon.textContent = 9000;
+                //appIcon.textContent = 9000;
             }
         }
 
@@ -146,7 +146,7 @@ function createAppIcons(numberOfIcons) {
             }
             if(imageUrlsBlue[i] == 'images/Icon34_3_Finder.png'){
                 appIcon.id = 9000;
-                appIcon.textContent = 9000;
+                //appIcon.textContent = 9000;
             }
         }
 
@@ -296,7 +296,7 @@ function startTimer() {
     // Set up a new interval timer
     timerInterval = setInterval(function() {
         let elapsedTime = Math.floor((Date.now() - startTimezz) / 1000); // Elapsed time in seconds
-        console.log('Elapsed Time:', elapsedTime, 'seconds');
+        // console.log('Elapsed Time:', elapsedTime, 'seconds');
     }, 1000); // Update every 1000 milliseconds (1 second)
 }
 
