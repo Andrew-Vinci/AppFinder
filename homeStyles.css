@@ -36,6 +36,24 @@
     background-color:lightgray;
 }
 
+.pageContainer .resetBtn {
+    display: inline-block; /* Default display for buttons */
+    justify-content: normal;
+    align-items: normal;
+    aspect-ratio: auto;
+    background-size: auto; /* Remove background sizing */
+    background-position: initial;
+    padding: 4px 8px; /* Default button padding */
+    font-size: medium; /* Default font size */
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    background-color: white;
+    margin-left: auto;
+}
+
+
+
 .pageContainer button{
     background-color: black;
     display: flex;
@@ -47,9 +65,10 @@
     background-position: center; /* Center the image */
 }
 
+
 .pageContainer a{
     font-size: 2em;
     display: block; /* Makes the link a block element */
     text-align: center; /* Centers the text inside the link */
-    margin-top: 150px; /* Adds space above the link */
+    margin-top: 100px; /* Adds space above the link */
 }

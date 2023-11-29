@@ -15,8 +15,11 @@ let startTimezz = 0;
 let timerInterval; // Global variable for the interval
 let incorrectClicks = 0;
 let colorCycle;
-let counter;
+let counter = 0;
 const showApp = document.querySelector('.showApp');
+
+let results = "";
+let temp = "";
 
 // Check if a value already exists in local storage
 const storedValue = getColorCycle();
@@ -93,9 +96,29 @@ function getColorCycle() {
     return value !== null ? parseInt(value, 10) : null; // Converts the string back to an integer
 }
 
+function setCounter(value) {
+    localStorage.setItem('counter', value);
+}
+
+// This function retrieves the value of colorCycle from local storage
+function getCounter() {
+    let value = localStorage.getItem('counter');
+    return value !== null ? parseInt(value, 10) : null; // Converts the string back to an integer
+}
+
+function setResults(value) {
+    localStorage.setItem('results', value);
+}
+
+// This function retrieves the value of colorCycle from local storage
+function getResults() {
+    let value = localStorage.getItem('results');
+    return value
+}
+
 function createAppIcons(numberOfIcons) {
     const grid = document.querySelector('.container')
-    counter = 0;
+    //counter = 0;
     randomizeGrid(imageUrlsWhite);
     randomizeGrid(imageUrlsRed);
     randomizeGrid(imageUrlsGreen);
@@ -106,7 +129,7 @@ function createAppIcons(numberOfIcons) {
 
         appIcon.id = i; // I changed this to just be an number for simpler comparisons
         appIcon.classList.add('item')
-        counter++
+        //counter++
 
 
         if(getColorCycle() == 0){
@@ -184,6 +207,35 @@ function downloadTextFile(text, filename) {
     window.URL.revokeObjectURL(url);
 }
 
+const resetCounterButton = document.getElementsByClassName('.resetBtn')
+
+function resetCounterButtonFunction(){
+    resetCounterButton.addEventListener('click', function (){
+        console.log("Clicked");
+        counter = 0;
+        setCounter(counter);
+        let resultReset = "";
+        setResults(resultReset);
+        temp = "";
+    })
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const resetButton = document.querySelector('.resetBtn');
+    if (resetButton) {
+        resetButton.addEventListener('click', function() {
+            console.log('Reset button clicked');
+            counter = 0;
+            setCounter(counter);
+            let resultReset = "";
+            setResults(resultReset);
+            temp = "";
+            console.log(getCounter());
+        });
+    } else {
+        console.log('Reset button not found');
+    }
+});
 
 
 function clickAndShuffle() {
@@ -195,7 +247,8 @@ function clickAndShuffle() {
 
             if(button.id == 9000){
                 stopTimer();
-                let totalTime = Math.floor((Date.now() - startTimezz) / 1000);
+                let totalTime = (Date.now() - startTimezz) / 1000;
+                let decimalTime = totalTime.toFixed(3);
                 console.log('Timer stopped. Total elapsed time:', totalTime, 'seconds');
 
                 console.log("WINNER");
@@ -204,23 +257,59 @@ function clickAndShuffle() {
                 // Could add enum here but Javascript doenst have native enum
                 if(getColorCycle() == 0){
                     console.log("Color: White");
-                    downloadTextFile("White " + "Incorrect Clicks: " + incorrectClicks + 
-                    " Time Elapsed: " + totalTime + "s", 'results.txt');
+                    let count = getCounter();
+                    count++;
+                    setCounter(count);
+                    temp += "White " + "Incorrect Clicks: " + incorrectClicks + 
+                    " Time Elapsed: " + decimalTime + "s\n";
+                    results = getResults() + temp;
+                    setResults(results);
+                    //downloadTextFile("White " + "Incorrect Clicks: " + incorrectClicks + 
+                    //" Time Elapsed: " + totalTime + "s", 'results.txt');
                 }
                 if(getColorCycle() == 1){
                     console.log("Color: Red");
-                    downloadTextFile("Red " + "Incorrect Clicks: " + incorrectClicks + 
-                    " Time Elapsed: " + totalTime + "s", 'results.txt');
+                    let count = getCounter();
+                    count++;
+                    setCounter(count);
+                    temp += "Red " + "Incorrect Clicks: " + incorrectClicks + 
+                    " Time Elapsed: " + decimalTime + "s\n"
+                    results = getResults() + temp;
+                    setResults(results);
+                    //downloadTextFile("Red " + "Incorrect Clicks: " + incorrectClicks + 
+                    //" Time Elapsed: " + totalTime + "s", 'results.txt');
                 }
                 if(getColorCycle() == 2){
                     console.log("Color: Green");
-                    downloadTextFile("Green " + "Incorrect Clicks: " + incorrectClicks + 
-                    " Time Elapsed: " + totalTime + "s", 'results.txt');
+                    let count = getCounter();
+                    count++;
+                    setCounter(count);
+                    temp += "Green " + "Incorrect Clicks: " + incorrectClicks + 
+                    " Time Elapsed: " + decimalTime + "s\n";
+                    results = getResults() + temp;
+                    setResults(results);
+                    //downloadTextFile("Green " + "Incorrect Clicks: " + incorrectClicks + 
+                    //" Time Elapsed: " + totalTime + "s", 'results.txt');
                 }
                 if(getColorCycle() == 3){
                     console.log("Color: Blue");
-                    downloadTextFile("Blue " + "Incorrect Clicks: " + incorrectClicks + 
-                    " Time Elapsed: " + totalTime + "s", 'results.txt');
+                    let count = getCounter();
+                    count++;
+                    setCounter(count);
+                    temp += "Blue " + "Incorrect Clicks: " + incorrectClicks + 
+                    " Time Elapsed: " + decimalTime + "s\n";
+                    results = getResults() + temp;
+                    setResults(results);
+                    //downloadTextFile("Blue " + "Incorrect Clicks: " + incorrectClicks + 
+                    //" Time Elapsed: " + totalTime + "s", 'results.txt');
+                }
+
+                if(getCounter() > 3){
+                    counter = 0;
+                    setCounter(counter);
+                    downloadTextFile(results, 'results.txt');
+                    let resultReset = "";
+                    setResults(resultReset);
                 }
                 
                 incorrectClicks = 0;
@@ -322,6 +411,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     createAppIcons(35);
     startTimer();
     clickAndShuffle();
+    resetCounterButtonFunction();
 });
 
 
