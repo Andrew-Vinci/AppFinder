@@ -5,12 +5,12 @@
 
 ## Description
 
-**This project is property of Andrew Vinci, Matthew Cournoyer, Kristin DeMatteo, and Ethan Helms.**
+### **This project is property of Andrew Vinci, Matthew Cournoyer, Kristin DeMatteo, and Ethan Helms.**
 
-*AppFinder was done as a joint collaboration in the class Human-Computer-Interaction at Champlain College.*
+### *AppFinder was done as a joint collaboration in the class Human-Computer-Interaction at Champlain College.*
 
-**Teacher: David Kopec**
-**Semester: Fall Semester 2023**
+### **Teacher: David Kopec**
+### **Semester: Fall Semester 2023**
 
 This project is meant to act as part of an experiment to determine how icon color affects a user's ability to quickly and easily identify said icon from amongst other apps.
 
@@ -29,7 +29,10 @@ The following README includes sections from the intiial research paper, includin
 - [Acknowledgments](#acknowledgments)
 
 ## Installation
-> git clone
+`> git clone https://github.com/Andrew-Vinci/AppFinder.git`
+
+## Research Paper
+[Download Research Paper]()
 
 ## Abstract
 
