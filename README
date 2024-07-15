@@ -22,13 +22,15 @@ The following README includes sections from the intiial research paper, includin
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
+- [Abstract](#installation)
+- [Methods](#methods)
+- [Results](#results)
+- [Discussion](#discussion)
+- [Conclusion](#conclusion)
 - [Acknowledgments](#acknowledgments)
 
 ## Installation
 > git clone
-
 
 ## Abstract
 
@@ -53,7 +55,7 @@ The front end of the experiment was designed using HTML and CSS, specifically CS
 
 The results of the experiment were collected from text files containing the data of each round of the experiment which was downloaded after a user completed all four tasks. The text files for all participants were placed in a spreadsheet and then analyzed to determine if any outliers existed. One was removed from the dataset because it was the only test where misclicks occurred, which impacted the time taken for the red test because it was around 3 standard deviations above the mean. Two others were removed from the analysis because they were at minimum 15 standard deviations above the mean, either due to distraction, starting the experiment early, or any other possible cause. By this point, a total of 21 participants were recorded but only 18 used in the data analysis. This was done by utilizing an analysis of variance (ANOVA) to search for statistical significance using the sum of the times, also known as the aggregate. The ANOVA of the aggregate is displayed in the image as well as the table below.
 
-## Results Table
+### Results Table
 ![alt text](<Screenshot 2024-07-15 at 5.09.50 PM.png>)
 
 The statistics most relevant to determining if the data shows significance or not in regards to the hypothesis are the F-value and p-value. If F > 1.0 and p < .05, then the data is considered significant. As shown in the table below, the F-value was indeed greater than 1.0, but the p-value was 0.185, meaning that the data collected did not have much significance. Because of this, the hypothesis that the color of an app affects how fast it can be located cannot be rejected nor proven to be true according to this experiment.
