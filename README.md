@@ -5,13 +5,12 @@
 
 ## Description
 
-This project is property of Andrew Vinci, Matthew Cournoyer,
-Kristin DeMatteo, and Ethan Helms.
+**This project is property of Andrew Vinci, Matthew Cournoyer, Kristin DeMatteo, and Ethan Helms.**
 
-It was done as a joint collaboration in the class Human-Computer-Interaction at Champlain College.
+*AppFinder was done as a joint collaboration in the class Human-Computer-Interaction at Champlain College.*
 
-Teacher: David Kopec
-Semester: Fall Semester 2023
+**Teacher: David Kopec**
+**Semester: Fall Semester 2023**
 
 This project is meant to act as part of an experiment to determine how icon color affects a user's ability to quickly and easily identify said icon from amongst other apps.
 
@@ -44,9 +43,6 @@ Since this is a highly visual experiment, great lengths were taken to consider t
 ![](<Screenshot 2024-07-15 at 5.03.05 PM.png>)
 
 The front end of the experiment was designed using HTML and CSS, specifically CSS Flexbox. Flexbox in CSS allows the developer to set the number of columns and rows of a specific element. The element was wrapped in a div class titled “background” and the individual elements inside the container were populated dynamically using Javascript. A function was used to populate the various elements based on the color cycle that was applied for that given round. Four arrays were used to store the elements with different colored applications. When a round was completed, a counter was applied to the color cycle variable and the next set of icons would be loaded for that round.
-
-### How the Experiment is Run
-[text](<../../../Screen Recording 2024-07-15 at 5.07.08 PM.mov>)
 
 
 ## Results
