@@ -10,7 +10,7 @@
 #### *AppFinder was done as a joint collaboration in the class Human-Computer-Interaction at Champlain College.*
 
 #### **Teacher: David Kopec**
-#### **Semester: Fall Semester 2023**
+#### **Semester: Fall 2023**
 
 This project is meant to act as part of an experiment to determine how icon color affects a user's ability to quickly and easily identify said icon from amongst other apps. The webpage cycles through the same app in four different colors: white, red, green, and blue. Incorrect attempts and total time are recorded in a text file at the end of each round.
 
