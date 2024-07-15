@@ -40,24 +40,26 @@ This study explores the impact of color-coded interfaces on reaction time when l
 
 Since this is a highly visual experiment, great lengths were taken to consider the graphics and visual representation of each app icon. To ensure the experiment simulated searching for an app on a modern device, the researchers decided to recreate popular app icons that participants would be familiar with, to use as distractor icons. The following search phrases of “most used apps in America,” “most popular apps for millennials,” and “highest downloaded apps for iOS” were used to compile a list of currently popular apps. This list was then narrowed down to 34 icons that could be posterized, as to the limit the color combinations present in the experiment. Finally, a 35th icon was developed as the target icon for participants to search for. This icon was designed to be a simple but easily recognizable form on top of a single color background, and was made in a red and white, green and white, blue and white, and white and black variant to test which color would be quickest to find between trials. The background for the test page was a plain gray so as to limit the amount of color-based distractions between app icons.
 
-
-![How Icons Were Created](<Screenshot 2024-07-15 at 5.03.05 PM.png>)
+### How Icons Were Created
+![](<Screenshot 2024-07-15 at 5.03.05 PM.png>)
 
 The front end of the experiment was designed using HTML and CSS, specifically CSS Flexbox. Flexbox in CSS allows the developer to set the number of columns and rows of a specific element. The element was wrapped in a div class titled “background” and the individual elements inside the container were populated dynamically using Javascript. A function was used to populate the various elements based on the color cycle that was applied for that given round. Four arrays were used to store the elements with different colored applications. When a round was completed, a counter was applied to the color cycle variable and the next set of icons would be loaded for that round.
 
-[How the Experiment is Run](<../../../Screen Recording 2024-07-15 at 5.07.08 PM.mov>)
+### How the Experiment is Run
+[text](<../../../Screen Recording 2024-07-15 at 5.07.08 PM.mov>)
 
 
 ## Results
 
 The results of the experiment were collected from text files containing the data of each round of the experiment which was downloaded after a user completed all four tasks. The text files for all participants were placed in a spreadsheet and then analyzed to determine if any outliers existed. One was removed from the dataset because it was the only test where misclicks occurred, which impacted the time taken for the red test because it was around 3 standard deviations above the mean. Two others were removed from the analysis because they were at minimum 15 standard deviations above the mean, either due to distraction, starting the experiment early, or any other possible cause. By this point, a total of 21 participants were recorded but only 18 used in the data analysis. This was done by utilizing an analysis of variance (ANOVA) to search for statistical significance using the sum of the times, also known as the aggregate. The ANOVA of the aggregate is displayed in the image as well as the table below.
 
-
-![Results Table](<Screenshot 2024-07-15 at 5.09.50 PM.png>)
+### Results Table
+![](<Screenshot 2024-07-15 at 5.09.50 PM.png>)
 
 The statistics most relevant to determining if the data shows significance or not in regards to the hypothesis are the F-value and p-value. If F > 1.0 and p < .05, then the data is considered significant. As shown in the table below, the F-value was indeed greater than 1.0, but the p-value was 0.185, meaning that the data collected did not have much significance. Because of this, the hypothesis that the color of an app affects how fast it can be located cannot be rejected nor proven to be true according to this experiment.
 
-![Anova Table](<Screenshot 2024-07-15 at 5.10.29 PM.png>)
+### Anova Table
+![](<Screenshot 2024-07-15 at 5.10.29 PM.png>)
 
 ## Discussion
 
@@ -69,7 +71,8 @@ Similarly, had this experiment been done on a phone as it is meant to mimic loca
 
 Regardless of the uncontrollable variables that could have influenced the results collected, there are still interesting data points to look closer at. For example, the times for green when compared to other colors were higher despite the insignificance of the overall dataset. The average time recorded for green was approximately 24% longer compared to the average of the colors white and blue. The graph below shows the average time as well as the standard deviations for each color. When considering the fact that a majority of the miscellaneous distraction apps (about 40%) chosen to populate the display were blue, it is surprising that blue had the fastest reaction time rather than any of the other three colors that would have theoretically stuck out more. The second fastest time was the white icon, and the second most common app colors for distraction apps were black and white.
 
-![Average Search Time](<Screenshot 2024-07-15 at 5.12.35 PM.png>)
+### Average Search Time
+![](<Screenshot 2024-07-15 at 5.12.35 PM.png>)
 
 Although the statistical analyses did not reveal significant differences in the speed of app location across the four differing color variations, the qualitative dimensions of participant interactions can still merit consideration. Some verbal feedback from participants highlighted the fact that color didn’t play a significant role in how they located the app and instead they focused on the shape of the magnifying glass icon chosen. Other participants mentioned that the black outline of the magnifying glass of the white icon stood out more than the white it was given for the three other colors. These factors could have all played a role in how participants recognized and reacted to the icon’s randomized location.
 
