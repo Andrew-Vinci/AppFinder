@@ -14,7 +14,7 @@
 
 This project is meant to act as part of an experiment to determine how icon color affects a user's ability to quickly and easily identify said icon from amongst other apps. The webpage cycles through the same app in four different colors: white, red, green, and blue. Incorrect attempts and total time are recorded in a text file at the end of each round.
 
-The following README includes sections from the intiial research paper, including the Abstract, Methods, Results, Discussion, and Conclusion section. It also includes a download of the research paper itself.
+The following README includes sections from the initial research paper, including the Abstract, Methods, Results, Discussion, and Conclusion sections. It also includes a download of the research paper itself.
 
 
 ## Table of Contents
